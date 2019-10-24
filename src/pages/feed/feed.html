@@ -1,0 +1,44 @@
+<!--
+  Generated template for the FeedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Feed</ion-title>
+  </ion-navbar>
+
+   <ion-navbar>
+    <load-log-in-button></load-log-in-button>
+    <load-profile-button></load-profile-button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+     
+  <ion-list>
+   <!-- DIV que contem todos os Pius em ordem cronologica -->
+    <div  class="piu" *ngFor="let piu of pius"> 
+      <img class="piuProfilePhoto" src="{{ piu.imagem }}">
+      <label class="usernamePiu" > {{piu.nome}} </label>
+      <h2  class="piucontent "> {{  piu.mensagem }} </h2>
+
+      <button class="Piu_dislike_button" ></button>
+      <ion-icon class="Piu_dislike_button" name="thumbs-down"></ion-icon>
+      
+      <span class="contadorDislikes">0</span>
+      <ion-icon class="Piu_like_button" name="thumbs-up"></ion-icon>    LIKE 
+      <span class="contadorLikes">0</span>                    
+    </div>
+  </ion-list>
+
+  
+
+  
+    
+
+</ion-content>

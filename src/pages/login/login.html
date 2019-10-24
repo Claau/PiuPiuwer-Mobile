@@ -1,0 +1,26 @@
+
+<ion-content class="body" padding overflow-scroll="false">
+
+<!-- FORMULARIO DE LOGIN -->
+<h1 id="h1First">Welcome to </h1>
+<h1 id="h1Second" > PiuPiuwer!</h1>
+   <form class="logInForm">
+    <ion-item>
+      <ion-input name="Username" maxlength="140" [(ngModel)]="username" placeholder="Username">  </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input name="Password" [(ngModel)]="password" placeholder="PASSWORD">  </ion-input>
+    </ion-item>
+  </form> 
+
+<!-- PARA ENVIAR O FORMULARIO -->
+<load-feed-button (click)="loginUser()"></load-feed-button>
+<h2>Dont have an <br> account? </h2>
+<h3>Sign up </h3>
+<load-sign-up-button></load-sign-up-button>
+
+
+
+
+</ion-content>
