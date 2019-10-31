@@ -7,33 +7,40 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Feed</ion-title>
+    <ion-title class="PiuPiuwer_title">PiuPiuwer</ion-title>
   </ion-navbar>
 
-   <ion-navbar>
+   <div class="menuBar">
     <load-log-in-button></load-log-in-button>
     <load-profile-button></load-profile-button>
-  </ion-navbar>
+  </div>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content  padding>
+
+<div id="textAreaPiu">
+    <ion-textarea [class]="textAreaNewPiuClass"  (click)="checkFocus()" name="newPiu" [(ngModel)]="piuContent" placeholder="thinking about something?"></ion-textarea>
+    <span>{{piuContent.length}}/140</span>
+    <ion-input type="submit"  class="submit_piu" (click)="createNewPiu()" ></ion-input>
+  </div>
      
   <ion-list>
+
    <!-- DIV que contem todos os Pius em ordem cronologica -->
     <div  class="piu" *ngFor="let piu of pius"> 
-      <img class="piuProfilePhoto" src="{{ piu.imagem }}">
-      <label class="usernamePiu" > {{piu.nome}} </label>
-      <h2  class="piucontent "> {{  piu.mensagem }} </h2>
+      <img class="piuProfilePhoto" src="../../assets/imgs/examplephotos/userProdileDefault.png" (click)="loadUserProfile(piu)">
+      <label class="usernamePiu" > @{{ piu.usuario.username }} </label>
+      <h2  class="piucontent"> {{  piu.conteudo }} </h2>
 
-      <button class="Piu_dislike_button" ></button>
-      <ion-icon class="Piu_dislike_button" name="thumbs-down"></ion-icon>
-      
-      <span class="contadorDislikes">0</span>
-      <ion-icon class="Piu_like_button" name="thumbs-up"></ion-icon>    LIKE 
-      <span class="contadorLikes">0</span>                    
-    </div>
+      <ion-row center>
+        <high-light-button (click)="editPiu(piu)"></high-light-button>
+        <button color="red" ion-button (click)="deletePiu(piu)" >DELETE</button>
+     </ion-row>
+                
+  </div>
+
   </ion-list>
 
   

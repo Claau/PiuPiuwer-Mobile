@@ -1,13 +1,15 @@
 
 
-.body{
+.bodyLogIn{
     background-color: rgb(95, 207, 138);
+    background-image: url(../../assets/imgs/randomBackground/1.gif);
     color: white;
+    
 }
 
 .logInForm{
     top: 35%;
-    left: 15%;
+    left: 7%;
     position: absolute;
 }
 
@@ -39,6 +41,7 @@ h2{
 }
 
 load-sign-up-button{
-    top: 87%;
+    top: 81.5%;
+    left: 54%;
     position: absolute;
 }

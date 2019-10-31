@@ -13,4 +13,7 @@ import { ProfilePage } from './profile';
     ProfilePage
   ]
 })
-export class ProfilePageModule {}
+
+export class ProfilePageModule {
+
+}

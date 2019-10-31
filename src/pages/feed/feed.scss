@@ -1,1 +1,60 @@
+  #textAreaPiu{
+      margin-top:40px;
+  }
+.piucontent{
+    padding-top: 1em;
+    padding-bottom: 3em;
+    margin-bottom:3em;
+}
+    //div que contem os pius
+    .piu{
+        position: relative;
+        justify-content: space-evenly;
+        margin-bottom: 10em;
+        padding-top: 10em;
+        border-top: 0.65px solid rgb(196, 196, 196);
+        font-size: 0.6em;
+    }
+
+    .piuProfilePhoto{
+        height: 7em;
+        width: 7em;
+        border-radius: 100px;
+        position: absolute;
+        top:9%;
+        left: 4%;
+    }
+
+    //nome de usuario
+    .usernamePiu{        
+        position: absolute;
+        left: 27%;
+        top: 20%;
+        
+        font-size: 2.5em;
+        color: rgb(168, 168, 168);
+        font-weight: 400;
+    }
+
+    .newPiuTextarea{
+        left: 50%;
+        transform: translateX(-50%);
+        width: 105%;
+        border-radius: 7px;
+        border: 1px solid rgb(221, 221, 221);
+    }
+
+    .newPiuTextareaFocus{
+        padding: 1em 1em 1em 1em;
+        border-radius: 5px;
+    }
+
+    .newPiuTextareaRed{
+        left: 50%;
+        transform: translateX(-50%);
+        width: 105%;
+        border-radius: 7px;
+        border: 1px solid red;
+        color: red;
+    }
 

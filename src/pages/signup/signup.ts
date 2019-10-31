@@ -11,6 +11,7 @@ import { FeedPage } from '../feed/feed';
   selector: 'page-signup',
   templateUrl: 'signup.html',
 })
+
 export class SignupPage {
 
   public username: string;
@@ -40,12 +41,14 @@ export class SignupPage {
       loading.present();
 
         let newUser: User = {
+            password: this.password1,
             username: this.username,
             first_name: this.firstName,
             last_name: this.secondName,
             email: this.email,
-           // prophilePhoto: this.file,
-            password: this.password1,
+            imageSRC: "",
+            userID: '',          
+           
           };
 
     this.newUserServide.createNewUser(newUser, this.navCtrl);

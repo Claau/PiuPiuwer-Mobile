@@ -4,7 +4,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'load-log-in-button',
-  template: '<button ion-button (click)="loadLogIn()" >LogOut</button>',
+  template: '<button class="buttonLogout" (click)="loadLogIn()" >LogOut</button>',
 })
 export class LoadLogInButtonComponent {
 

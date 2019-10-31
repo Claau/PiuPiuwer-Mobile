@@ -11,6 +11,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
 import { IonicModule } from 'ionic-angular';
 import { SendPiuButtonComponent } from './send-piu-button/send-piu-button';
+import { HighLightButtonComponent } from './high-light-button/high-light-button';
 
 
 @NgModule({
@@ -20,13 +21,16 @@ import { SendPiuButtonComponent } from './send-piu-button/send-piu-button';
 		LoadSignUpButtonComponent,
    		LoadLogInButtonComponent,
     	SendPiuButtonComponent,
+    HighLightButtonComponent,
 	],
 	exports: [
 		LoadFeedButtonComponent,
 		LoadProfileButtonComponent,
 		LoadSignUpButtonComponent,
     	LoadLogInButtonComponent,
-    SendPiuButtonComponent,
+    	SendPiuButtonComponent,
+		HighLightButtonComponent,
+		HighLightButtonComponent
 	],
 	entryComponents: [ 
 		FeedPage,

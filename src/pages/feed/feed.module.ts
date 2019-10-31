@@ -15,11 +15,4 @@ import { FeedPage } from './feed';
 
   
 })
-export class FeedPageModule {
-
-  constructor(public navCtrl: NavController ) {
-
-  }
-  
-
-}
+export class FeedPageModule {}

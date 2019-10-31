@@ -1,5 +1,5 @@
 
-<ion-content class="body" padding overflow-scroll="false">
+<ion-content class="bodyLogIn" padding overflow-scroll="false">
 
 <!-- FORMULARIO DE LOGIN -->
 <h1 id="h1First">Welcome to </h1>
@@ -10,14 +10,13 @@
     </ion-item>
 
     <ion-item>
-      <ion-input name="Password" [(ngModel)]="password" placeholder="PASSWORD">  </ion-input>
+      <ion-input name="Password" [(ngModel)]="password" placeholder="PASSWORD"> </ion-input>
     </ion-item>
   </form> 
 
 <!-- PARA ENVIAR O FORMULARIO -->
 <load-feed-button (click)="loginUser()"></load-feed-button>
 <h2>Dont have an <br> account? </h2>
-<h3>Sign up </h3>
 <load-sign-up-button></load-sign-up-button>
 
 

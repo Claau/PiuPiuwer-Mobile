@@ -17,6 +17,8 @@ import { SignUpProvider } from '../providers/sign-up/sign-up';
 import { RestProvider } from '../providers/rest/rest';
 import { LoginPage } from '../pages/login/login';
 
+import { IonicStorageModule } from '@ionic/storage';
+
 
 
 @NgModule({
@@ -27,13 +29,17 @@ import { LoginPage } from '../pages/login/login';
     SignupPage,
     ProfilePage,
     LoginPage,
-    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
     HttpClientModule,
+    IonicStorageModule.forRoot({
+      name: 'PiuPiuwer',
+      storeName: 'pius',
+      driverOrder: ['indexeddb']
+    })
 
   ],
   bootstrap: [IonicApp],
@@ -41,6 +47,7 @@ import { LoginPage } from '../pages/login/login';
     MyApp,
     HomePage,
     LoginPage,
+    FeedPage,
   ],
   providers: [
     StatusBar,
@@ -49,6 +56,7 @@ import { LoginPage } from '../pages/login/login';
     LoginProvider,
     SignUpProvider,
     RestProvider,
+    Storage
   ],
 
 })

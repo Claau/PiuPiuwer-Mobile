@@ -11,8 +11,20 @@
   </ion-navbar>
 
 </ion-header>
-
+    
 
 <ion-content padding>
+
+    <img class="piuProfilePhoto_prof" src="../../assets/imgs/examplephotos/userProdileDefault.png">
+    <h1 class="userDataUsername_prof" > {{user.username}} </h1>
+    <h1 class="userDataName_prof" > {{user.first_name}} {{user.last_name}} </h1>
+    <h1 class="userDataEmail_prof"> {{user.email}} </h1>
+
+    <div  class="piuProfile" *ngFor="let piu of pius"> 
+      <h2> {{  piu.conteudo }} </h2>
+      <high-light-button ></high-light-button>
+   </div>
+
+   <div class="AgoraVai"></div>
 
 </ion-content>

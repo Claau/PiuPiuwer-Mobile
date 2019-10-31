@@ -1,3 +1,12 @@
-load-profile-button {
+.buttonProfile {
+    background-image: url(../../assets/icon/profileicon.png);
+    background-size: 3.5em;
+    background-position: center;
+    width: 2.6em;
+    height: 2.6em;
+    text-indent: -9999px;
+    border-radius: 100px;
 
+    position: absolute;
+    left: 5em;
 }

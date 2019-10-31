@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, Alert } from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Piu } from '../../modules/piu';
+import { LoginProvider } from '../../providers/login/login';
+import { ProfilePage } from '../profile/profile';
 
 
 @IonicPage()
@@ -13,65 +15,92 @@ import { Piu } from '../../modules/piu';
 export class FeedPage {
 
   public pius: Piu[];
+  public piuContent= '';
+
+  public profilePiuClicked;
+
+  public contador=0;
+
+  public textAreaNewPiuClass: string = 'newPiuTextarea';
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private _http: HttpClient ) {
-
+    private http: HttpClient,
+    private alertCtrl: AlertController,
+    public loginProvider: LoginProvider 
+     ) {      
     /*atualiza alista dePius*/
-    this._http.get<Piu[]>('http://www.json-generator.com/api/json/get/ceycmRLqWa?indent=2')
+    this.http.get<Piu[]>('http://piupiuwer.polijunior.com.br/api/pius/')
       .subscribe(
-        (pius) => { this.pius= pius }
+        (pius) => { this.pius= pius.reverse() }
       );    
-    }
-  /*
-  createNewPiu(username ,string, mensagem , imagem, nome ){
-    
-    //validacao do piu
-    if( !this.mensagem ){
-      this.alertCtrl.create({
-        title: "Yooh! you didnt say a word!",
-        subTitle: 'Cant submit a empty Piu',
-        buttons: [{ text: 'ok' }],
-      }).present();
 
-      return;
-    }
+     }
 
-    if( !this.mensagem.lenght<140 ){
-      this.alertCtrl.create({
-        title: "Yooh! you need to resume your speech!",
-        subTitle: 'Cant submit a empty Piu',
-        buttons: [{ text: 'ok' }],
-      }).present();
 
-      return;
-    }
+      //muda a formatacao da TextArea do NewPiu quando clickada
+      checkFocus(){
 
-    //criando o novo piu
-    let newPiu: Piu = {
-      username: this.username,  //this.username
-      mensagem: this.mensagem,
-      imagem: this.imagem,
-      nome: this.nome, 
-    }
+        if ( this.textAreaNewPiuClass == 'newPiuTextarea')
+          {this.textAreaNewPiuClass = 'newPiuTextareaFocus';}
+        else
+          { this.textAreaNewPiuClass = 'newPiuTextarea'}
+      }
 
-     //usados no post
-     this.alerta= this.alertCtrl.create({
-      title: 'Aviso',
-      buttons: [ { text:'ok' } ]
-    });   
-  }
 
-  //newPiuPost - newpiu provider
-  this.loadNewPiu.createNewPiu(newPiu)
-  .subscribe(
-  () =>  { //this.alerta.setSubTitlel('New Piu Posted')
- },
-  () => { 
-    this.alerta.setSubTitle('Error: couldn post the new piu')
-    this.alerta.present() }
-  );
-  */
+      createNewPiu(){
+        if(this.piuContent.length > 140){
+          this.textAreaNewPiuClass = 'newPiuTextareaRed';
+
+          this.alertCtrl.create({
+            title: "No more than 140 characters!",
+            buttons: [
+                {text: "ok"}
+            ]
+          }).present(); 
+        }
+
+        if(this.piuContent.length == 0){
+          this.textAreaNewPiuClass = 'newPiuTextareaRed';
+
+          this.alertCtrl.create({
+            title: "Write something!",
+            buttons: [
+                {text: "ok"}
+            ]
+          }).present(); 
+        }
+        
+        let newPiu = {
+          conteudo: this.piuContent,
+          favoritado: false,
+          data: new Date().toISOString(),
+          
+        }
+        console.log("token :" + this.loginProvider.globalToken);
+
+        this.http.post(
+          'http://piupiuwer.polijunior.com.br/api/pius/', 
+          newPiu,
+          { headers: new HttpHeaders().set( 'Authorization'  ,  'JWT ' + this.loginProvider.globalToken ).set( "Content-Type", 'application/json') } 
+          ).subscribe(
+            (e) => { console.log("new Piu created!") },
+            (err) => { console.log(err) }
+            );
+      }
+
+      loadUserProfile(piu){ 
+        this.profilePiuClicked = piu.usuario;
+        this.navCtrl.push( ProfilePage, { user: this.profilePiuClicked} );
+      }
+      
+      deletePiu(piu){
+        let index = this.pius.indexOf(piu);
+
+        if(index > -1){
+          this.pius.splice(index, 1);
+        }
+      }
+  
 }

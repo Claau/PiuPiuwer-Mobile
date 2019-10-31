@@ -22,12 +22,11 @@ export class SignUpProvider {
       (err: HttpErrorResponse) => {
           console.log(err);
           
-          this.alertCtrl.create({
-             title: "Something is wrong!",
-             subTitle: "Fill all the blanks correctly",
+          this.alertCtrl.create( {
+             title: "Fill all the blanks correctly",
              buttons: [
                 {text: "ok"}
-             ]
+              ]
           }).present();
 
       }

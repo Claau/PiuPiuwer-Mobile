@@ -1,3 +1,32 @@
-page-profile {
+
+.piuProfilePhoto_prof{
+    width: 8em;
+    height: 8em;
+    margin-left: 27%;
+    border-radius: 100px;
+}
+.userDataUsername_prof{
+    text-align: center;
+}
+.userDataName_prof{
+    text-align: center;
+    color: rgb(201, 201, 201);
+    font-size: 1.5em;
+}
+.userDataEmail_prof{
+    text-align: center;
+    font-size: 1.5em;
+}
+.piuProfile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+
+    font-size: 0.6em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid  rgb(201, 201, 201);
 
 }
+
+

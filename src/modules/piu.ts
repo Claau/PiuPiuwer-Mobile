@@ -1,8 +1,9 @@
-import { Img } from "ionic-angular";
+import { User } from "./user";
 
 export interface Piu{
-    username: string;
-    mensagem: string;
-    imagem: Img;
-    nome: string; //firstName + secondName
+    id: string;
+    favoritado: boolean ;
+    conteudo: string;
+    data: string;
+    usuario: User;
 }

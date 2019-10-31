@@ -12,8 +12,8 @@
 
 </ion-header>
 
-<ion-content padding>
-<form (ngSubmit)="createNewUser()" #formulario="ngForm">
+<ion-content padding class="body">
+<form  (ngSubmit)="createNewUser()" #formulario="ngForm">
     <ion-item>
       <ion-input name="Username" [(ngModel)]="username" min='5' placeholder="Username" required>  </ion-input>
     </ion-item>

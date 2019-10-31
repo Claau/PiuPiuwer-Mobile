@@ -12,7 +12,7 @@ import { SignupPage } from '../../pages/signup/signup';
  */
 @Component({
   selector: 'load-sign-up-button',
-  template: '<button ion-button (click)=loadSignUp() >Singup</button>',
+  template: '<h3 (click)=loadSignUp() >Singup</h3>',
 })
 export class LoadSignUpButtonComponent {
 

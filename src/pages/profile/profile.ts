@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { User } from '../../modules/user';
+import { LoginProvider } from '../../providers/login/login';
+import { HttpClient } from '@angular/common/http';
+import { Piu } from '../../modules/piu';
 
 
 
@@ -8,20 +12,38 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
   selector: 'page-profile',
   templateUrl: 'profile.html',
 })
+
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController ) {
-      
-    let loading = this.loadingCtrl.create({
-      content: '<p class="loading" >Loading</p>'
-    });
+  public user;
+  public pius: Piu[];
 
-    loading.present();
-    loading.dismiss();
-   }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private loadingCtrl: LoadingController,
+    public usersProvider: LoginProvider,
+    public http: HttpClient,
+   ) {
+     
+      //load icon
+      let loading = this.loadingCtrl.create(
+        { content: '<p class="loading" >Loading</p>'}
+      );
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
-  }
-
+      loading.present();
+      loading.dismiss();
+     
+     this.user = this.navParams.get('user');
+   
+      this.http.get<Piu[]>("http://piupiuwer.polijunior.com.br/api/pius?usuario=" + 4/*this.usersProvider.userID*/)
+      .subscribe(
+        (pius) => { this.pius = pius.reverse();
+         },
+        (err) => { console.log(err) }
+      )
+    }
+ 
+   
+    
 }

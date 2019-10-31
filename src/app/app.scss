@@ -6,63 +6,43 @@
 *::-webkit-scrollbar {
   display: none;
 }
+
     
     .PiuPiuwer_title{
         position: absolute;
-    
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    
         font-size: 2.65em;
         font-family: 'PT Serif', serif;
         font-weight: bold;
-        
-        padding-left: 2.5em;
-         
+        top: 7px;   
     }
     
     .PiuPiuwer_title::before{
         content: " ";
     
         width: 0.8em;
-        height: 0.8em;
+        height: 0.8em;     
     
-        position:absolute;
-        left: 0%;
-    
-        background-image: url(../img/patoicon.png);
-        background-size: 0.8em;
+        background-image: url(../assets/icon/patoicon.png);
+        background-size: 0.5em;
         background-repeat: no-repeat;
+        top: -10px;
     
         font-size: 2.65em;
         font-family: 'PT Serif', serif;
         font-weight: bold;
     
     }
-    
-    /* --------CAIXAS DE PUBLICAÇÕES de PIUS*/
 
-    
-    //div que contem os pius
-    .piu{
+    .menuBar{
         position: relative;
-        padding: 0.5em 1em 3em 1em;
-        margin: 1em 0em 1em 0em;
-        border: 1px solid rgb(187, 187, 187);
-        border-radius: 7px;
+        padding: 1em 0em 1em 0em;
+        align-content: center;
+        position: fixed;
+        
     }
+     
 
-    //piu mensagem
-    .piucontent{
-        font-size: 1.2em;
-    }
 
-    .piuProfilePhoto{
-        height: 4em;
-        width: 4em;
-        border-radius: 100px;
-    }
     
     //Contador de carateres
     .contador{       /*SPAN contador de caracteres PIU*/
@@ -75,17 +55,7 @@
         top: 95px;
     }
     
-    //nome de usuario
-    .usernamePiu{        
-        position: absolute;
-        left: 33%;
-        top: 15%;
-        
-        font-size: 1.25em;
-        color: rgb(168, 168, 168);
-        font-weight: 400;
-    }
-        
+            
         /* BOTOES (LIKE, DISLIKE, EDIT) E SEUS CONTADORES*/
         .Piu_delete_button{
             position: absolute;
@@ -98,7 +68,7 @@
             height: 2.5em;
             background-size: 2em;
             
-            background-image: url(../img/delete.png);
+            background-image: url(../assets/icon/delete.png);
             border: 1px solid transparent;
             background-color: transparent;
             background-repeat: no-repeat;
@@ -107,15 +77,27 @@
     
         .Piu_dislike_button{
             position: absolute;
-            bottom: 0.5em;
-            font-size: 1.5em;            
+            bottom: 1em;   
+            background-image: url(../assets/icon/dislike.png);   
+            background-position: center;
+            background-size: 2em;   
+            background-repeat: no-repeat;
+            border-radius: 100px; 
+            width: 2em;
+            height: 2em;
         }
     
         .Piu_like_button{
             position: absolute;
-            bottom: 0.5em;
-            left: 3.5em;
-            font-size: 1.5em;
+            bottom: 0.6em;
+            left: 4.4em;
+            background-image: url(../assets/icon/like.png);  
+            background-position: center;
+            background-size: 1.7em;   
+            background-repeat: no-repeat;
+            border-radius: 100px; 
+            width: 2em;
+            height: 2em;
         }
     
         .Piu_edit_button{
@@ -127,7 +109,7 @@
             height: 2em;
             background-size: 2em;
             
-            background-image: url(../img/edit.png);
+            background-image: url(../assets/icon/edit.png);
             border: 1px solid transparent;
             background-color: transparent;
             background-repeat: no-repeat;
@@ -145,30 +127,14 @@
     
             border-radius: 100px;
             
-            background-image: url(../img/highlight.png);
+            background-image: url(../assets/icon/highlight.png);
             border: 1px solid transparent;
             background-color: transparent;
             background-repeat: no-repeat;
             background-position: center;
         }
-
-        .submitButton{
-            margin: 1.2em 0em 0em 0em;
-        }
     
-        .contadorLikes{ /*SPAN contador de likes*/
-            position: absolute;
-            bottom: 0.75em;
-            left: 6em;
-            font-size: 1.2em;
-        }
-        
-        .contadorDislikes{/*SPAN contador de dislikes*/
-            position: absolute;
-            bottom: 0.75em;
-            left:2.5em; 
-            font-size: 1.2em;
-        }
+      
     
 .basics_Piu{            /*ARTICLE(caixa) que guarda cada Piu*/
 
@@ -186,38 +152,22 @@
     
 }
         
-    
-    
-    
-        
     /*BOTÃO DE ENVIAR PIU -*/
     .submit_piu{
-        position: absolute;
+        
+        text-indent: -999px;
+        left: 84%;
+        top: -15px;
     
-        background-image: url(../img/sendicon_hover.png);
-        background-color: transparent;
-        background-size: 2.5em;
-        background-repeat: no-repeat;
-        background-position-x: 50%;
-        background-position-y: 50%;
-    
-        text-indent: -9999px;
-    
-        right: 20px;
-        top:20px;
-    
-        border: 3px solid transparent;
-        border-radius:100% ;
-        width: 3em;
-        height: 3em;
-    }
-    
-    .submit_piu:focus{
-        background-image: url(../img/sendicon_focus.png);
+        background-image: url(../assets/icon/sendicon.png);
         background-color:  rgb(21, 206, 98);
+        background-size: 1.9em;
+        background-position: center;
+    
+        border-radius:100% ;
+        width: 2.5em;
+        height: 2.5em;
     }
-    
-    
 
 //dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd SIN VER AUN                     55555555555555555555
     /*-------------Profile photo*/
@@ -227,49 +177,7 @@
         height: 250px;
         border: 1px solid  rgb(190, 190, 190);
     }
-    
-    .name_profile{
-        position: absolute;
-    
-        font-size: 2em;
-        font-family: 'Nanum Gothic', sans-serif;
-        font-weight: bold;
-        color: rgb(173, 0, 0);    
-    
-    }
-    
-    /* 4 SEARCH BAR CARACTERISTICS*/
-    .searchbar_feed{
-        position: absolute;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        
-        border: 1px solid rgb(221, 221, 221);
-            border-radius: 5px;
-        
-        width: 18%;
-        height: 450px;
-    
-        left: 3%;
-        top: 450px;
-    }
-    .searchbar_feed:hover{ 
-        background-color: rgba(255, 255, 255, 0.521);
-        border-radius: 10px;
-        }
-    
-    .searchbar_input{
-        position: absolute;
-        top: 2%;
-    
-        border-radius: 7px;
-        width: 88%;
-        border: 2px solid rgb(187, 187, 187);
-        padding: 0.5em;
-        font-family: inherit;
-    }
-    
+      
     
     /*EDITAR*/
     .Piu_edit{
@@ -287,39 +195,25 @@
         border: 1px solid transparent;
         border-radius: 5px; 
     }
-    
-    .submit_piu_edit{
-        position: absolute; 
-        color: transparent;
-    
-        background-image: url(../img/sendicon_hover.png);
-        background-color: transparent;
-        background-size: 2em;
-        background-repeat: no-repeat;
-        background-position-x: 50%;
-        background-position-y: 50%;
-    
-        bottom: 4px;
-        right: 8px;
-    
-        border: 3px solid transparent;
-        border-radius:100% ;
-        width: 3em;
-        height: 3em;
-    
-    }
+ 
 
     //ALERTS E LOAGIN
     .loading{
         padding: 3.5em 4em  3.5em 4em;
         top: -40%;
         left: -10%;
-        background-image: url('../assets/imgs/duck.gif');
+        background-image: url('../assets/icon/duck.gif');
         background-position: center;
         background-size: 16em;
         text-indent: -1000px;
         position: absolute;
         border-radius: 100px;
         opacity: 0.85;
+    }
+
+    .alert{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
     
